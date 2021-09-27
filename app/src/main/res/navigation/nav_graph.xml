@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="org.kmery.bedushop.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_secondMainActivity"
+            app:destination="@id/secondMainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="org.kmery.bedushop.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="2"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="org.kmery.bedushop.ListFragment"
+        android:label="fragment_list_products"
+        tools:layout="@layout/fragment_list_products" />
+    <activity
+        android:id="@+id/secondMainActivity"
+        android:name="org.kmery.bedushop.SecondMainActivity"
+        android:label="navigation_main"
+        tools:layout="@layout/navigation_main" />
+</navigation>
