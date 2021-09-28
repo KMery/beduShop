@@ -20,9 +20,6 @@
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_listFragment"
-            app:destination="@id/listFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_secondMainActivity"
             app:destination="@id/secondMainActivity" />
     </fragment>
@@ -41,11 +38,6 @@
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/listFragment"
-        android:name="org.kmery.bedushop.ListFragment"
-        android:label="fragment_list_products"
-        tools:layout="@layout/fragment_list_products" />
     <activity
         android:id="@+id/secondMainActivity"
         android:name="org.kmery.bedushop.SecondMainActivity"
