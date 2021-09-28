@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_list_products.*
@@ -34,7 +35,8 @@ class ListFragment : Fragment() {
         setUpRecyclerView()
     }
 
-    fun setListener(l: (Product) ->Unit){
+    //listener llamado desde SecondMainActivity
+    fun setListener(l: (Product) -> Unit){
         listener = l
     }
 
@@ -48,6 +50,7 @@ class ListFragment : Fragment() {
         recyclerProducts.adapter = mAdapter
     }
 
+    //Lee datos desde el file pasado
     private fun getJsonDataFromAsset(context: Context, fileName: String = "products.json"): String? {
         val jsonString: String
         try {
@@ -59,6 +62,7 @@ class ListFragment : Fragment() {
         return jsonString
     }
 
+    //Obtiene los productos leidos como una lista de productos
     @ExperimentalStdlibApi
     fun getProducts(context: Context): List<Product> {
         val jsonString = getJsonDataFromAsset(context)

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.AdapterView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.view.ActionMode
@@ -17,7 +18,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import kotlinx.android.synthetic.main.activity_second_main.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import okhttp3.internal.Internal.instance
+import java.security.AccessController.getContext
 
+//Actividad post logeo
 class SecondMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,24 +51,17 @@ class SecondMainActivity : AppCompatActivity() {
         }
         bottom_navigation_view.selectedItemId = R.id.home_item
 
-        /*if (bottom_navigation_view.selectedItemId == R.id.home_item) {
-            //    Toast.makeText(this, "$it Selected!", Toast.LENGTH_SHORT).show()
-            val listFragment = supportFragmentManager.findFragmentById(R.id.listProducts) as ListFragment
+        //Aquí debiera mandar al detail del producto elegido
+        val listFragment = supportFragmentManager.findFragmentById(R.id.fragmentList) as ListFragment
 
-            listFragment.setListener{
-                val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
-                Toast.makeText(this, "$it Selected!", Toast.LENGTH_SHORT).show()
-                // Pantalla grande, mostrar detalle en el fragment
-                if(detailFragment!=null){
-                    detailFragment.showProduct(it)
-                } else{ //pantalla pequeña, navegar a un nuevo Activity
-                    val intent = Intent(this, DetailActivity::class.java)
-                    intent.putExtra(DetailActivity.PRODUCT,it)
-                    startActivity(intent)
-                }
+        listFragment.setListener{
+            Toast.makeText(this, "Buena elección!", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, DetailActivity::class.java).apply {
+                putExtra(DetailActivity.PRODUCT, it)
             }
-        }*/
-
+            startActivity(intent)
+        }
     }
 
     //Se levanta topNavBar
@@ -96,6 +92,7 @@ class SecondMainActivity : AppCompatActivity() {
     //BottomNav --> permite mostrar el fragmento correspondiente al item elegido
     private fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
+        //transaction.replace(R.id.fragmentList, fragment)
         transaction.replace(R.id.second_activity, fragment)
         transaction.addToBackStack(null)
         transaction.commit()

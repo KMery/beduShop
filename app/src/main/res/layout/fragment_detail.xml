@@ -30,13 +30,13 @@
         android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descripción"
+        android:text="@string/description"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@id/tvProduct" />
 
     <RatingBar
-        android:id="@+id/rbRate"
+        android:id="@+id/ratingBar"
         style="@style/Widget.AppCompat.RatingBar.Indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,12 +45,14 @@
 
     <ImageView
         android:id="@+id/imgProduct"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="234dp"
+        android:layout_height="249dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/kobo"
         app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="@id/guideline5"
-        app:layout_constraintTop_toBottomOf="@id/rbRate" />
+        app:layout_constraintTop_toBottomOf="@id/ratingBar" />
 
     <TextView
         android:id="@+id/tvPrice"
@@ -66,10 +68,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="180dp"
         android:text="@string/agregarCarrito"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgProduct"
         tools:ignore="MissingConstraints" />
@@ -94,6 +96,28 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.74" />
+
+    <CheckBox
+        android:id="@+id/checkbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/check1"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/imgProduct" />
+
+    <CheckBox
+        android:id="@+id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/check2"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,19 +14,27 @@
         tools:ignore="MissingConstraints" />
 
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/second_activity"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
         app:layout_constraintTop_toBottomOf="@+id/txTextView"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:context=".SecondMainActivity"
+        >
+        <fragment
+            android:id="@+id/fragmentList"
+            class="org.kmery.bedushop.ListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/Button.Orange"
         app:menu="@menu/nav_drawer_menu"
         app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

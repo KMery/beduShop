@@ -30,7 +30,7 @@ class DetailFragment : Fragment() {
 
         tvProduct = view.findViewById(R.id.tvProduct)
         tvDescription = view.findViewById(R.id.tvDescription)
-        rbRate = view.findViewById(R.id.rbRate)
+        rbRate = view.findViewById(R.id.ratingBar)
         imgProduct = view.findViewById(R.id.imgProduct)
         tvPrice = view.findViewById(R.id.tvPrice)
 
@@ -46,6 +46,8 @@ class DetailFragment : Fragment() {
         rbRate.rating = product.rating
         //imgProduct.setImageResource(product.idImage)
         //imgProduct.setImageDrawable(LoadImageFromWebOperations(product.image, product.name))
+
+        //imgProduct.setImageResource(R.drawable.cabecera)
 
         Picasso.get()
             .load(product.image)

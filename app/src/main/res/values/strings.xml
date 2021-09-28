@@ -19,10 +19,13 @@
     <string name="password">Contraseña</string>
     <string name="nombreCompleto">Nombre completo</string>
     <string name="telefono">Teléfono</string>
-    <string name="beduShop">Bedu Shop 2</string>
+    <string name="beduShop">Bedu Shop</string>
     <string name="beduBolsa">bolsa shop bedu</string>
     <string name="registro">Regístrate</string>
+    <string name="check1">Disponible en tu domicilio</string>
+    <string name="check2">Entrega mañana</string>
 
+    <string name="description">Descripción</string>
     <string name="nuevoProducto">Nuevo</string>
     <string name="agregarCarrito">Agregar al carrito</string>
 </resources>

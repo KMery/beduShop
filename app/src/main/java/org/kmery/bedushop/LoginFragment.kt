@@ -14,9 +14,10 @@ import androidx.navigation.navOptions
 import com.google.android.material.button.MaterialButton
 
 class LoginFragment : Fragment() {
-
+    //User seteado a modo de prueba
     val User = mapOf<String, String>("user@mail.com" to "pass123")
 
+    //Animaciones
     val options = navOptions {
         anim {
             enter = R.anim.slide_in_right
@@ -26,8 +27,10 @@ class LoginFragment : Fragment() {
         }
     }
 
+    //Checkea si los datos de logeo son correctos
     private fun checkUserCorrect(mailEntered: String, passEntered:String): String = if (mailEntered !in User && passEntered !== User[mailEntered]) "Mail o Password incorrecto" else "Bienvenido!"
 
+    //Obtiene los datos ingresados por el usuario
     private fun getInputData(view: View, requiredData:String): String {
         when (requiredData) {
             "mail" -> {
@@ -40,7 +43,7 @@ class LoginFragment : Fragment() {
                 val passEntered = inputPass.text.toString()
                 return passEntered
             }
-            else -> { // Note the block
+            else -> {
                 return ""
             }
         }
@@ -50,7 +53,6 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
@@ -66,14 +68,7 @@ class LoginFragment : Fragment() {
             Toast.makeText(requireContext(), logged, Toast.LENGTH_SHORT).show()
 
             if (logged == "Bienvenido!") {
-                //view.findNavController().navigate(R.id.action_loginFragment_to_listFragment, null, options)
-
-                //view.findNavController().navigate(R.id.second_main, null, options)
-
-                view.findNavController().navigate(R.id.action_loginFragment_to_secondMainActivity, null, options) // ---> ok
-
-                //val intent = Intent(requireActivity(), SecondMainActivity::class.java)
-                //startActivity(intent)
+                view.findNavController().navigate(R.id.action_loginFragment_to_secondMainActivity, null, options)
             }
         }
 
@@ -81,12 +76,6 @@ class LoginFragment : Fragment() {
         registerButton.setOnClickListener {
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment, null, options)//, null, options
         }
-
-        //registerButton.setOnClickListener(
-        //    Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_registerFragment)
-        //)
-
-        //registerButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_registerFragment, null))
 
     }
 }

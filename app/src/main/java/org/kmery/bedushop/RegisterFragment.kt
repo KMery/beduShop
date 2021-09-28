@@ -35,7 +35,5 @@ class RegisterFragment : Fragment() {
         buttonLogin.setOnClickListener {
             view.findNavController().navigate(R.id.action_registerFragment_to_loginFragment, null, options)//, null, options
         }
-
-        //buttonLogin.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_registerFragment_to_loginFragment, null))
     }
 }
