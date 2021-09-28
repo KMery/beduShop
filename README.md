@@ -5,13 +5,16 @@ For the correct use of the code I seggest to use AndroidStudio
   https://developer.android.com/studio
 
 The project implements:
-  Layouts y ACtivities
-  Fragments
-  Lists
-  RecyclerAdapter
-  Navigation
-  Menus
-  Material Design
+  <ul>
+    <li>Layouts y ACtivities</li>
+    <li>Fragments</li>
+    <li>Lists</li>
+    <li>RecyclerAdapter</li>
+    <li>Navigation</li>
+    <li>Menus</li>
+    <li>Material Design</li>
+  <ul>
+
   
   The project simulates the register and login of an user, then you can see the products of the shop and interact with the bottons of the menu
   
