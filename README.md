@@ -21,7 +21,7 @@ The project simulates the register and login of an user, then you can see the pr
   
   The user to pass throught the login is
     <ul>
-      <li><strong>User:</strong> test@mail.com</li>
+      <li><strong>User:</strong> user@mail.com</li>
       <li><strong>Pass:</strong> pass123</li>
     </ul>
     
