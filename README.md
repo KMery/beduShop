@@ -6,7 +6,7 @@ For the correct use of the code I seggest to use AndroidStudio
 
 The project implements:
   <ul>
-    <li>Layouts y ACtivities</li>
+    <li>Layouts y Activities</li>
     <li>Fragments</li>
     <li>Lists</li>
     <li>RecyclerAdapter</li>
@@ -16,8 +16,13 @@ The project implements:
   <ul>
 
   
+  #About the project
   The project simulates the register and login of an user, then you can see the products of the shop and interact with the bottons of the menu
   
   The user to pass throught the login is
-    User: test@mail.com
-    Pass: pass123
+    <ul>
+      <li><strong>User:</strong> test@mail.com</li>
+      <li><strong>Pass:</strong> pass123</li>
+    </ul>
+    
+    
