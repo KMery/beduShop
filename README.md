@@ -14,10 +14,10 @@ The project implements:
     <li>Menus</li>
     <li>Material Design</li>
   <ul>
+<br/>
 
-  
-  #About the project
-  The project simulates the register and login of an user, then you can see the products of the shop and interact with the bottons of the menu
+# About the project
+The project simulates the register and login of an user, then you can see the products of the shop and interact with the bottons of the menu
   
   The user to pass throught the login is
     <ul>
