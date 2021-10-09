@@ -11,10 +11,9 @@
         android:id="@+id/txTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@id/second_activity"/>
 
-
-    <LinearLayout
+    <!--<LinearLayout
         android:id="@+id/second_activity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,12 +27,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-    </LinearLayout>
+    </LinearLayout>-->
+
+    <fragment
+        android:id="@+id/second_activity"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:layout_constraintTop_toBottomOf="@+id/txTextView"
+        app:navGraph="@navigation/nav_home"
+        tools:layout_editor_absoluteX="0dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/nav_drawer_menu"
-        app:layout_constraintBottom_toBottomOf="@id/second_activity" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/nav_drawer_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

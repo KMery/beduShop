@@ -24,7 +24,7 @@
         android:layout_width="71dp"
         android:layout_height="62dp"
         android:layout_marginStart="4dp"
-        android:src="@drawable/kobo"
+        android:src="@drawable/cabecera"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="parent" />

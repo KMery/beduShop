@@ -28,4 +28,8 @@
     <string name="description">Descripción</string>
     <string name="nuevoProducto">Nuevo</string>
     <string name="agregarCarrito">Agregar al carrito</string>
+
+    <string name="seisSinInteres">En 6 meses sin intereses</string>
+    <string name="disponible"> Disponible en tu domicilio</string>
+    <string name="entregaManiana">Entrega mañana</string>
 </resources>

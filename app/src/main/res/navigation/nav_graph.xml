@@ -42,5 +42,5 @@
         android:id="@+id/secondMainActivity"
         android:name="org.kmery.bedushop.SecondMainActivity"
         android:label="navigation_main"
-        tools:layout="@layout/navigation_main" />
+        tools:layout="@layout/activity_second_main" />
 </navigation>

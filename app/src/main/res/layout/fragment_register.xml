@@ -69,6 +69,7 @@
 
     <com.google.android.material.textfield.TextInputEditText
         app:boxBackgroundColor="@color/background"
+        android:inputType = "number"
         android:id="@+id/editTextPhone"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
@@ -86,6 +87,7 @@
     <com.google.android.material.textfield.TextInputEditText
         app:boxBackgroundColor="@color/background"
         android:id="@+id/editTextPassword"
+        android:inputType="textPassword"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
