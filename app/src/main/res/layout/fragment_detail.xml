@@ -43,12 +43,12 @@
             app:layout_constraintTop_toBottomOf="@+id/tvProduct" />
 
         <TextView
-            android:id="@+id/tvNumOpinions"
+            android:id="@+id/ratingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
-            android:text="543"
+            android:text="266"
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@+id/ratingBar"

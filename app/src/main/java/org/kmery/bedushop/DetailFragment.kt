@@ -26,6 +26,7 @@ class DetailFragment : Fragment() {
     private lateinit var tvProduct: TextView
     private lateinit var tvDescription: TextView
     private lateinit var rbRate: RatingBar
+    private lateinit var rbRateText: TextView
     private lateinit var imgProduct: ImageView
     private lateinit var tvPrice: TextView
 
@@ -43,8 +44,9 @@ class DetailFragment : Fragment() {
         rbRate = view.findViewById(R.id.ratingBar)
         imgProduct = view.findViewById(R.id.imgProduct)
         tvPrice = view.findViewById(R.id.tvPrice)
+        rbRateText = view.findViewById(R.id.ratingText)
 
-        //Funcion que te escrolea SOLO EL DETALLE
+        //scroll in detailView
         tvDescription.movementMethod = ScrollingMovementMethod()
 
         //Esconder bottomMenu
@@ -64,7 +66,8 @@ class DetailFragment : Fragment() {
             .load(product.image)
             .placeholder(R.drawable.cabecera)
             .into(imgProduct)
-        rbRate.rating = product.rating
+        rbRate.rating = (0..5).random().toFloat()
+        rbRateText.text = (99..999).random().toString()
 
         //bottom_navigation_view.visibility = View.GONE
 

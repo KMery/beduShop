@@ -45,6 +45,7 @@ class RecyclerAdapter(
             //obteniendo las referencias a las Views
             val productName = view.findViewById(R.id.tvProduct) as TextView
             val ratingB = view.findViewById<RatingBar>(R.id.ratingBar)
+            val ratingT = view.findViewById(R.id.ratingText) as TextView
             val price = view.findViewById(R.id.tvPrice) as TextView
             val image = view.findViewById(R.id.imgProduct) as ImageView
 
@@ -52,6 +53,7 @@ class RecyclerAdapter(
             fun bind(product: Product, context: Context){
                 productName.text = product.title
                 ratingB.rating = (0..5).random().toFloat()
+                ratingT.text = (99..999).random().toString()
                 price.text = product.price.toString()
                 Picasso.get()
                     .load(product.image)
