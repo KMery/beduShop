@@ -2,6 +2,7 @@ package org.kmery.bedushop
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.text.TextUtils.indexOf
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,11 +21,13 @@ import kotlin.random.Random
 class RecyclerAdapter(
     private val context:Context,
     private val products: MutableList<Product>,
+    //private val products: Collection<Product>,
     private val clickListener: (Product) -> Unit): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
         //Aquí atamos el ViewHolder
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            val product = products[position]
+            //val product = products[position]
+            val product = products.elementAt(position)
             holder.bind(product, context)
             holder.view.setOnClickListener{clickListener(product)}
         }
@@ -37,6 +40,10 @@ class RecyclerAdapter(
         override fun getItemCount(): Int {
             return products.size
         }
+
+        /*fun addProduct(product: Product) {
+            products.add(product)
+        }*/
 
         //El ViewHolder ata los datos del RecyclerView a la Vista para desplegar la información
         //También se encarga de gestionar los eventos de la View, como los clickListeners

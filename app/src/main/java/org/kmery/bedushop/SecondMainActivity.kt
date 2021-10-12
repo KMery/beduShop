@@ -2,56 +2,38 @@ package org.kmery.bedushop
 
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.transition.ChangeBounds
+import android.transition.Scene
+import android.transition.TransitionInflater
+import android.transition.TransitionManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.Button
-import android.widget.TextView
+import android.view.animation.AccelerateInterpolator
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.appcompat.view.ActionMode
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_second_main.*
 import kotlinx.android.synthetic.main.fragment_register.*
-import okhttp3.internal.Internal.instance
-import java.security.AccessController.getContext
+//import org.kmery.bedushop.databinding.ActivitySecondMainBinding
 
 //Actividad post logeo
 class SecondMainActivity : AppCompatActivity() {
-    //private  var listFragment = ListFragment()
-    //private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navController: NavController
-    //private lateinit var view: View
 
+    //Transition setUps
+    private lateinit var sceneOne: Scene
+    private lateinit var sceneTwo: Scene
+    private lateinit var currentScene: Scene
+
+    //private lateinit var binding: ActivitySecondMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_main)
-
-
-
-        //Navigation between fragments with the BottomNavigationMenu
-        /*val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
-        bottomNavigationView.setupWithNavController(
-            Navigation.findNavController(
-                this,
-                R.id.second_activity
-            )
-        )*/
 
         //Setea hacia que fragmento va según opción elegida
         bottom_navigation_view.setOnNavigationItemSelectedListener { menuItem ->
@@ -77,11 +59,12 @@ class SecondMainActivity : AppCompatActivity() {
         }
         bottom_navigation_view.selectedItemId = R.id.home_item
 
+        //Setea el navhost para obtener el navController
         val navHostFragment: NavHostFragment = supportFragmentManager
             .findFragmentById(R.id.second_activity) as NavHostFragment? ?: return
 
         navController = navHostFragment.navController
-        //Esconder bottomNavMenu
+        //Esconder bottomNavMenu si no encuentra opción en bottomNavMenu items
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id) {
                 R.id.detailFragment ->
@@ -98,6 +81,9 @@ class SecondMainActivity : AppCompatActivity() {
     }
 
     //TopNav --> se setea de acuerdo a item presionado su acción
+    //Actualmente existen dos opciones
+    //Lupa: --> toast con mensaje de búsqueda desactivada
+    //Help: --> redirije a página de bedu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle presses on the action bar menu items
         when (item.itemId) {

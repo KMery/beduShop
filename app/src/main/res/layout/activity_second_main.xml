@@ -13,21 +13,20 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/second_activity"/>
 
-    <!--<LinearLayout
+    <!--<FrameLayout
         android:id="@+id/second_activity"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
         app:layout_constraintTop_toBottomOf="@+id/txTextView"
-        tools:context=".SecondMainActivity"
-        >
-        <fragment
-            android:id="@+id/fragmentList"
-            class="org.kmery.bedushop.ListFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-    </LinearLayout>-->
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:navGraph="@navigation/nav_home"
+        tools:layout_editor_absoluteX="0dp">
+        <include layout="@layout/fragment_list_products" />
+    </FrameLayout>-->
 
     <fragment
         android:id="@+id/second_activity"
@@ -39,6 +38,20 @@
         app:layout_constraintTop_toBottomOf="@+id/txTextView"
         app:navGraph="@navigation/nav_home"
         tools:layout_editor_absoluteX="0dp" />
+
+    <!--<fragment
+        android:id="@+id/second_activity"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:layout_constraintTop_toBottomOf="@+id/txTextView"
+        app:navGraph="@navigation/nav_home"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <include layout="@layout/fragment_list_products" />-->
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"

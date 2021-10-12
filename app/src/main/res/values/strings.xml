@@ -22,8 +22,6 @@
     <string name="beduShop">Bedu Shop</string>
     <string name="beduBolsa">bolsa shop bedu</string>
     <string name="registro">Regístrate</string>
-    <string name="check1">Disponible en tu domicilio</string>
-    <string name="check2">Entrega mañana</string>
 
     <string name="description">Descripción</string>
     <string name="nuevoProducto">Nuevo</string>
@@ -32,4 +30,23 @@
     <string name="seisSinInteres">En 6 meses sin intereses</string>
     <string name="disponible"> Disponible en tu domicilio</string>
     <string name="entregaManiana">Entrega mañana</string>
+
+    <string name="prodCerca">Productos cerca de ti</string>
+
+
+    <!--Profile-->
+    <string name="profileName">Usuario</string>
+    <string name="profileMail">user@mail.com</string>
+    <string name="profileAddresses">Mis direcciones</string>
+    <string name="profilePaidMethod">Métodos de pago</string>
+    <string name="profileOrders">Pedidos</string>
+    <string name="profileNotifications">Notificaciones</string>
+    <string name="profileChangePassword">Cambiar contraseña</string>
+    <string name="profileCloseSession">Cerrar sesion</string>
+
+    <!--Profile location-->
+    <string name="locationTitle">Agregar dirección</string>
+    <string name="locationCurrentTitle">Ubicación actual</string>
+    <string name="locationAddressDescription">Calle 123, 5000 Córdoba, Córdoba capital, Argentina.</string>
+    <string name="locationUpdate">Actualizar</string>
 </resources>

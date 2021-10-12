@@ -19,8 +19,6 @@ class DetailActivity : AppCompatActivity() {
         val PRODUCT = "PRODUCT"
     }
 
-    private lateinit var addBoton: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -34,15 +32,7 @@ class DetailActivity : AppCompatActivity() {
         //val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
         //bottomNavigationView.visibility = View.GONE
 
-        addBoton = findViewById(R.id.addCarrito)
-        addBoton.setOnClickListener{
-            Toast.makeText(this, "$it.title agregado!", Toast.LENGTH_LONG).show()
-            /*val intent= Intent(this, SecondMainActivity::class.java).apply {
-                putExtra("origen", "DETAIL")
-            }
-            startActivity(intent)*/
 
-        }
     }
 
 }

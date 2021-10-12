@@ -7,10 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.TextView
+import android.widget.*
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -30,6 +27,8 @@ class DetailFragment : Fragment() {
     private lateinit var imgProduct: ImageView
     private lateinit var tvPrice: TextView
 
+    private lateinit var addBoton: Button
+
     private val args: DetailFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -45,6 +44,7 @@ class DetailFragment : Fragment() {
         imgProduct = view.findViewById(R.id.imgProduct)
         tvPrice = view.findViewById(R.id.tvPrice)
         rbRateText = view.findViewById(R.id.ratingText)
+        addBoton = view.findViewById(R.id.addCarrito)
 
         //scroll in detailView
         tvDescription.movementMethod = ScrollingMovementMethod()
@@ -69,25 +69,15 @@ class DetailFragment : Fragment() {
         rbRate.rating = (0..5).random().toFloat()
         rbRateText.text = (99..999).random().toString()
 
-        //bottom_navigation_view.visibility = View.GONE
 
-        /*bottom_navigation_view.setOnItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.home_item -> {
-                    view.findNavController().navigate(R.id.inicioFragment)
-                    true
-                }
-                R.id.cart_item -> {
-                    view.findNavController().navigate(R.id.action_inicioFragment_to_carritoFragment)
-                    true
-                }
-                R.id.profile_item -> {
-                    view.findNavController().navigate(R.id.action_inicioFragment_to_perfilFragment)
-                    true
-                }
-                else -> false
+        addBoton.setOnClickListener{
+            Toast.makeText(requireContext(), "agregado!", Toast.LENGTH_LONG).show()
+            /*val intent= Intent(this, SecondMainActivity::class.java).apply {
+                putExtra("origen", "DETAIL")
             }
-        }*/
+            startActivity(intent)*/
+
+        }
     }
 
     /*fun showProduct(product: Product){
