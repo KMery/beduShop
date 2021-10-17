@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screenRegister"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/screenRegister"
     android:background="@color/background">
 
     <TextView
@@ -34,7 +35,6 @@
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputEditText
-        app:boxBackgroundColor="@color/background"
         android:id="@+id/editTextFullName"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
@@ -46,13 +46,13 @@
         android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textRegister" />
 
     <com.google.android.material.textfield.TextInputEditText
-        app:boxBackgroundColor="@color/background"
         android:id="@+id/editTextEmail"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
@@ -62,14 +62,13 @@
         android:hint="@string/correo"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextFullName" />
 
     <com.google.android.material.textfield.TextInputEditText
-        app:boxBackgroundColor="@color/background"
-        android:inputType = "number"
         android:id="@+id/editTextPhone"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
@@ -77,14 +76,16 @@
         android:drawableLeft="@drawable/ic_baseline_local_phone_24"
         android:drawablePadding="8sp"
         android:hint="@string/telefono"
+        android:inputType="number"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <!--<com.google.android.material.textfield.TextInputEditText
         app:boxBackgroundColor="@color/background"
         android:id="@+id/editTextPassword"
         android:inputType="textPassword"
@@ -99,28 +100,63 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        />-->
 
-    <TextView
-        android:id="@+id/error_vacio2"
-        android:layout_width="100dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextPasswordLayout"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:boxBackgroundColor="@color/background"
+        android:textColorHint="@color/white"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone">
+
+    <!--Using the TextInputEditText,which is
+        same as the edit text,but remember-->
+    <!--that we need to use TextInputEditText
+        with TextInputLayout-->
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="20dp"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="8sp"
+        android:hint="@string/password"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:inputType="textPassword"
+        android:ems="15"/>
+
+</com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--<TextView
+        android:id="@+id/error_vacio2"
+        android:layout_width="229dp"
+        android:layout_height="39dp"
         android:layout_marginTop="584dp"
         android:textColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="36dp"
         android:text="@string/registro"
         android:theme="@style/Button.Orange"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@
 
     <string name="productos">Productos</string>
     <string name="carrito">Carrito</string>
-
+    <!--Registro-->
     <string name="registrese">Registrese aquí</string>
     <string name="inicie">Iniciar sesión</string>
     <string name="correo">Correo electrónico</string>
@@ -22,6 +22,7 @@
     <string name="beduShop">Bedu Shop</string>
     <string name="beduBolsa">bolsa shop bedu</string>
     <string name="registro">Regístrate</string>
+    <string name="textInputPass">Ingrese password</string>
 
     <string name="description">Descripción</string>
     <string name="nuevoProducto">Nuevo</string>
