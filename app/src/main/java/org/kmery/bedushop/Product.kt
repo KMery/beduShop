@@ -1,5 +1,25 @@
 package org.kmery.bedushop
 
+/*import androidx.room.Entity
+import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
+import io.realm.Realm
+import io.realm.RealmModel
+//import retrofit2.http.Url
+
+open class Product:RealmObject() {
+
+    @PrimaryKey
+    var id: Int? =null
+
+    var title: String? =null
+    var price: Double?=null
+    var description: String?=null
+    var category: String? = null
+    var image: String? = null
+
+}*/
+
 import android.graphics.drawable.Drawable
 import android.os.Parcel
 import android.os.Parcelable

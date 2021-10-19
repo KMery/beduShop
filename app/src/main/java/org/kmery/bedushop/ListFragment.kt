@@ -36,14 +36,15 @@ class ListFragment : Fragment() {
     private lateinit var listener : (Product) -> Unit
     private lateinit var recyclerProducts : RecyclerView
 
-    private lateinit var sceneOne: Scene
+    /*private lateinit var sceneOne: Scene
     private lateinit var sceneTwo: Scene
-    private lateinit var currentScene: Scene
+    private lateinit var currentScene: Scene*/
 
     private val url = "https://fakestoreapi.com/products"
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         container?.removeAllViews()
@@ -165,13 +166,6 @@ class ListFragment : Fragment() {
                         //val products: MutableList<Product> = Gson().fromJson(gsonProduct, listProductType)
                         val listProductType = object : TypeToken<MutableList<Product>>() {}.type
                         val products: MutableList<Product> = Gson().fromJson(body, listProductType)
-                        println(
-                            """
-                                #########
-                                $products
-                                #########
-                            """
-                        )
 
 
                         recyclerProducts = requireView().findViewById(R.id.recyclerProducts)

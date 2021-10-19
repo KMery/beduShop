@@ -49,6 +49,12 @@
         <argument
             android:name="Name"
             app:argType="string" />
+        <action
+            android:id="@+id/action_carritoFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_carritoFragment_to_paidFragment2"
+            app:destination="@id/paidFragment2" />
     </fragment>
     <fragment
         android:id="@+id/perfilFragment"
@@ -56,5 +62,10 @@
         android:label="PerfilFragment"
         tools:layout="@layout/fragment_profile"
         />
+    <fragment
+        android:id="@+id/paidFragment2"
+        android:name="org.kmery.bedushop.PaidFragment"
+        android:label="fragment_paid"
+        tools:layout="@layout/fragment_paid" />
 
 </navigation>

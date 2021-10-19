@@ -1,6 +1,6 @@
 package org.kmery.bedushop
 
-import android.graphics.drawable.Drawable
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import androidx.fragment.app.Fragment
@@ -8,15 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.navigation.findNavController
+import androidx.core.os.bundleOf
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.gms.analytics.ecommerce.Product
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_second_main.*
-import java.io.InputStream
-import java.lang.Exception
-import java.net.URL
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class DetailFragment : Fragment() {
 
@@ -30,6 +32,12 @@ class DetailFragment : Fragment() {
     private lateinit var addBoton: Button
 
     private val args: DetailFragmentArgs by navArgs()
+
+    private lateinit var navController: NavController
+
+    companion object {
+        val PRODUCT = "PRODUCT"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,16 +57,15 @@ class DetailFragment : Fragment() {
         //scroll in detailView
         tvDescription.movementMethod = ScrollingMovementMethod()
 
-        //Esconder bottomMenu
-        //var bottomNavigationView = activity().view.find
-        //bottomNavigationView.visibility = View.GONE
+
 
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val product : Product = args.product
+        //val product : Product = args.product
+        val product : org.kmery.bedushop.Product = args.product
         tvProduct.text = product.title
         tvPrice.text = product.price.toString()
         tvDescription.text = product.description
@@ -70,9 +77,39 @@ class DetailFragment : Fragment() {
         rbRateText.text = (99..999).random().toString()
 
 
+        /*val navHostFragment: NavHostFragment = supportFragmentManager
+            .findFragmentById(R.id.detailFragment) as NavHostFragment? ?: return
+
+        navController = navHostFragment.navController*/
+
         addBoton.setOnClickListener{
-            Toast.makeText(requireContext(), "agregado!", Toast.LENGTH_LONG).show()
-            /*val intent= Intent(this, SecondMainActivity::class.java).apply {
+            Toast.makeText(requireContext(), "${product.title}agregado!", Toast.LENGTH_LONG).show()
+
+            //findNavController().navigate(R.id.carritoFragment)
+
+
+
+            val bundle = bundleOf("product" to product)
+            //findNavController().navigate(R.id.action_detailFragment_to_carritoFragment, bundle)
+
+
+
+            //bottom_navigation_view.selectedItemId = R.id.cart_item
+            //findNavController().navigate(R.id.action_detailFragment_to_carritoFragment, bundle)
+
+            var fragment:Fragment = CartFragment.newInstance()
+            fragment.arguments = bundle
+            val fragManager: FragmentManager? = this.getFragmentManager()
+            val transaction = fragManager?.beginTransaction()
+            //transaction.replace(R.id.fragmentList, fragment)
+            transaction?.replace(R.id.second_activity, fragment)
+            transaction?.addToBackStack(null)
+            transaction?.commit()
+
+
+        //findNavController().navigate(R.id.action_carritoFragment_to_inicioFragment)
+
+            /*val intent= Intent(requireContext(), CartFragment::class.java).apply {
                 putExtra("origen", "DETAIL")
             }
             startActivity(intent)*/

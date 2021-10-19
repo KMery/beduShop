@@ -3,6 +3,10 @@ plugins {
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-android-extensions'
+
+    id 'kotlin-kapt'
+    id 'realm-android'  // Este es el plugin a aplicar, el anterior sólo está por referencia // Este es el plugin a aplicar, el anterior sólo está por referencia
+
 }
 
 android {
@@ -55,6 +59,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.gms:play-services-analytics-impl:17.0.1'
     testImplementation 'junit:junit:4.12'
 
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -88,4 +93,10 @@ dependencies {
     //implementation("com.squareup.okhttp3:okhttp:4.9.0")
     //implementation "com.squareup.okhttp3:okhttp:4.2.2"
     //implementation 'org.mock-server:mockserver-netty:3.9.6'
+
+    //Number picker
+    implementation 'com.github.travijuu:numberpicker:1.0.7'
+
+    implementation 'androidx.room:room-runtime:2.2.5'
+    kapt 'androidx.room:room-compiler:2.2.5'
 }

@@ -24,7 +24,6 @@
     <string name="paidSubtotal">Subtotal</string>
     <string name="paidSend">Envío</string>
     <string name="paidTotal">Total</string>
-    <string name="paidBtn">Pagar</string>
 
     <!--Registro-->
     <string name="registrese">Registrese aquí</string>

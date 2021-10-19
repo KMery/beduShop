@@ -8,6 +8,7 @@ import android.transition.ChangeBounds
 import android.transition.Scene
 import android.transition.TransitionInflater
 import android.transition.TransitionManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -16,6 +17,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_second_main.*
 import kotlinx.android.synthetic.main.fragment_register.*
 //import org.kmery.bedushop.databinding.ActivitySecondMainBinding
@@ -23,6 +25,7 @@ import kotlinx.android.synthetic.main.fragment_register.*
 //Actividad post logeo
 class SecondMainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
+    private lateinit var products: List<Product>
 
     //Transition setUps
     private lateinit var sceneOne: Scene
@@ -34,6 +37,12 @@ class SecondMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_main)
+
+       /* val realm = Realm.getDefaultInstance()
+        products = realm.where(Product::class.java).findAll()
+
+        Log.d("Respuesta","$products")*/
+
 
         //Setea hacia que fragmento va según opción elegida
         bottom_navigation_view.setOnNavigationItemSelectedListener { menuItem ->
