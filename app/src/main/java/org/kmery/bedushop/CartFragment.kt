@@ -16,6 +16,8 @@ import kotlinx.android.synthetic.main.fragment_cart.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
+lateinit var shopJson: Any
+
 class CartFragment: Fragment() {
     companion object {
         fun newInstance(): CartFragment = CartFragment()
@@ -42,8 +44,15 @@ class CartFragment: Fragment() {
                $jsonString 
             """
         )
-
-
+        shopJson = jsonString
+        println(
+            """
+                #########
+                all saved?
+               $shopJson
+                #########
+            """
+        )
 
 
         return inflater.inflate(R.layout.fragment_cart, container, false)

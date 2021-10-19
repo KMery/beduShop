@@ -1,10 +1,12 @@
 package org.kmery.bedushop
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
@@ -21,7 +23,17 @@ class PaidFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_paid, container, false)
+        val view = inflater.inflate(R.layout.fragment_paid, container, false)
+        paidBtn = view.findViewById(R.id.paidBtn)
+        paidBtn.setOnClickListener {
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                Toast.makeText(requireContext(), "Excelente compra!", Toast.LENGTH_SHORT).show()
+                (activity as SecondMainActivity).shopNotification()
+            }
+        }
+
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

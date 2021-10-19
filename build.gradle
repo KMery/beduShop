@@ -20,6 +20,11 @@ buildscript {
         classpath "com.android.databinding:dataBinder:1.0-rc1"
 
         classpath "io.realm:realm-gradle-plugin:10.8.0"
+
+        //Google
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.2' //el plugin de crashlytics
+
     }
 }
 

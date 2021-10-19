@@ -1,7 +1,12 @@
 package org.kmery.bedushop
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.ChangeBounds
@@ -14,6 +19,9 @@ import android.view.MenuItem
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -21,6 +29,8 @@ import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_second_main.*
 import kotlinx.android.synthetic.main.fragment_register.*
 //import org.kmery.bedushop.databinding.ActivitySecondMainBinding
+
+val CHANNEL_OTHERS = "OTROS"
 
 //Actividad post logeo
 class SecondMainActivity : AppCompatActivity() {
@@ -42,6 +52,10 @@ class SecondMainActivity : AppCompatActivity() {
         products = realm.where(Product::class.java).findAll()
 
         Log.d("Respuesta","$products")*/
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            setNotificationChannel()
+        }
 
 
         //Setea hacia que fragmento va según opción elegida
@@ -117,5 +131,46 @@ class SecondMainActivity : AppCompatActivity() {
         transaction.replace(R.id.second_activity, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
+    }
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setNotificationChannel(){
+        val name = getString(R.string.agregarCarrito)
+        val descriptionText = getString(R.string.app_name)
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val channel = NotificationChannel(CHANNEL_OTHERS, name, importance).apply {
+            description = descriptionText
+        }
+
+        val notificationManager: NotificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        notificationManager.createNotificationChannel(channel)
+    }
+
+    fun shopNotification() {
+
+
+        val intent = Intent(this, SecondMainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.putExtra("origen", "COMPRA")
+        }
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+
+
+        //se buildea notificación
+        var builder = NotificationCompat.Builder(this, CHANNEL_OTHERS)
+            .setSmallIcon(R.drawable.cabecera) //icono del push notification
+            .setContentTitle(getString(R.string.notifTitle)) //título de la notificación
+            .setContentText(getString(R.string.notifBody)) //cuerpo de la notificación
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT) //Con prioridad por defecto
+            .setContentIntent(pendingIntent) //Content intent
+            .setAutoCancel(true)
+
+        //ejecutar notificación
+        with(NotificationManagerCompat.from(this)) {
+            notify(20, builder.build()) //en este caso pusimos un id genérico
+        }
     }
 }

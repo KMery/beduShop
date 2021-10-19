@@ -26,6 +26,10 @@
     <string name="paidTotal">Total</string>
     <string name="paidBtn">Pagar</string>
 
+    <!--Notificacion-->
+    <string name="notifTitle">Compra realizada</string>
+    <string name="notifBody">Tu pedido llegará en una  semana</string>
+
     <!--Registro-->
     <string name="registrese">Registrese aquí</string>
     <string name="inicie">Iniciar sesión</string>

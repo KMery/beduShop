@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "157847172788",
+    "project_id": "bedushop-3e17b",
+    "storage_bucket": "bedushop-3e17b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157847172788:android:026f626bc9f9838bfa09e1",
+        "android_client_info": {
+          "package_name": "org.kmery.bedushop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157847172788-518rnq542ipvc1q6o283m190ihqjt7g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQCfN-C4R15aAjfkulEQ5Bm5Jqb8mwuA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157847172788-518rnq542ipvc1q6o283m190ihqjt7g1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
