@@ -66,6 +66,19 @@
         android:id="@+id/paidFragment2"
         android:name="org.kmery.bedushop.PaidFragment"
         android:label="fragment_paid"
-        tools:layout="@layout/fragment_paid" />
+        tools:layout="@layout/fragment_paid" >
+        <action
+            android:id="@+id/action_paidFragment2_to_soldFragment"
+            app:destination="@id/soldFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/soldFragment"
+        android:name="org.kmery.bedushop.SoldFragment"
+        android:label="fragment_sold"
+        tools:layout="@layout/fragment_sold" >
+        <action
+            android:id="@+id/action_soldFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
 
 </navigation>

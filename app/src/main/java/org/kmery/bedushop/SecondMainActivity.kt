@@ -22,8 +22,10 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.NavDeepLinkBuilder
 import androidx.navigation.fragment.NavHostFragment
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_second_main.*
@@ -152,12 +154,18 @@ class SecondMainActivity : AppCompatActivity() {
     fun shopNotification() {
 
 
-        val intent = Intent(this, SecondMainActivity::class.java).apply {
+        /*val intent = Intent(this, SecondMainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             intent.putExtra("origen", "COMPRA")
         }
-        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)*/
 
+        val pendingIntent = NavDeepLinkBuilder(this) //context
+            .setComponentName(SecondMainActivity::class.java)
+            .setGraph(R.navigation.nav_home)
+            .setDestination(R.id.soldFragment)
+            //.setArguments(bundle)
+            .createPendingIntent()
 
         //se buildea notificación
         var builder = NotificationCompat.Builder(this, CHANNEL_OTHERS)

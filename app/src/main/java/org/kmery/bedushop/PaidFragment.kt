@@ -25,13 +25,13 @@ class PaidFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_paid, container, false)
         paidBtn = view.findViewById(R.id.paidBtn)
-        paidBtn.setOnClickListener {
+        /*paidBtn.setOnClickListener {
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 Toast.makeText(requireContext(), "Excelente compra!", Toast.LENGTH_SHORT).show()
                 (activity as SecondMainActivity).shopNotification()
-            }
-        }
+            //}
+        }*/
 
         return view
     }
@@ -41,6 +41,8 @@ class PaidFragment: Fragment() {
 
         paidBtn = view.findViewById(R.id.paidBtn)
         paidBtn.setOnClickListener {
+            (activity as SecondMainActivity).shopNotification() //Llamar a la notificación
+            /*Llamar al fragmento de post pago*/
             var fragment:Fragment = SoldFragment.newInstance()
             val fragManager: FragmentManager? = this.getFragmentManager()
             val transaction = fragManager?.beginTransaction()
