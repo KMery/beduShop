@@ -1,28 +1,25 @@
 # beduShop
-Shop app using Android studio and kotlin
+## Shop app using Android studio and kotlin
 
-For the correct use of the code I seggest to use AndroidStudio
-  https://developer.android.com/studio
+For the correct use of the code I suggest to use AndroidStudio
+  <a href="https://developer.android.com/studio">Android studio</a><br></br>
 
-The project implements:
-  <ul>
-    <li>Layouts y Activities</li>
-    <li>Fragments</li>
-    <li>Lists</li>
-    <li>RecyclerAdapter</li>
-    <li>Navigation</li>
-    <li>Menus</li>
-    <li>Material Design</li>
-  <ul>
-<br/>
+## About the project
+The project let the user Login or register. The registration is just design, so right now you can enter any data and it would accept it.
+The login is different, you must use an user from the next API <a href="https://reqres.in/api/users/">Reqres.in</a>. The password would accept any character/s.
 
-# About the project
-The project simulates the register and login of an user, then you can see the products of the shop and interact with the bottons of the menu
-  
-  The user to pass throught the login is
-    <ul>
-      <li><strong>User:</strong> user@mail.com</li>
-      <li><strong>Pass:</strong> pass123</li>
-    </ul>
-    
-    
+The products that the app will show are from the same app. From this List you can click in any product to get the detail view.
+From the detail view you can buy the products with the button "Agregar al carrito". That would trigger the next Fragment (The Cart).
+Then if you want can add more of that product. And then checkout to buy it.
+
+
+## Features
+
+<ul>
+    <li>The Home and Cart Fragment use RecyclerView</li>
+    <li>The profile use geocoder to get your address (If you allow)</li>
+    <li>When you buy a product It will trigger a notification (This would open the home fragment if you use it)</li>
+    <li>The project use Navigation (jetpack)</li>
+    <li>To fetch the url from reqres this project uses "okhttp3"</li>
+    <li>To load ImagesViews from a link use Picasso</li>
+</ul>
