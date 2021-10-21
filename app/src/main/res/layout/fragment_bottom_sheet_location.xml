@@ -67,6 +67,7 @@
             app:layout_constraintTop_toBottomOf="@+id/locationCurrentTitle" />
 
         <Button
+            android:id="@+id/updateAddress"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

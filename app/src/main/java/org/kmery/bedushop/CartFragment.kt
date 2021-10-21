@@ -5,6 +5,8 @@ import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.os.bundleOf
@@ -37,7 +39,7 @@ class CartFragment: Fragment() {
         container?.removeAllViews()
         //val str = savedInstanceState?.getString("product")
 
-        jsonString = arguments?.get("product")!!
+        jsonString = arguments?.get("product") ?: ""
         println(
             """
                 On create CartFragment
@@ -60,7 +62,7 @@ class CartFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        //cartBtn.visibility = VISIBLE
         cartBtn = view.findViewById(R.id.cartBtn)
         cartBtn.setOnClickListener {
             val bundle = bundleOf("product" to jsonString)
@@ -78,7 +80,11 @@ class CartFragment: Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        setUpRecyclerView()
+        if (jsonString != "") {
+            setUpRecyclerView()
+        } else {
+            cartBtn.visibility = GONE
+        }
     }
 
     private fun setUpRecyclerView() {
