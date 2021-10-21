@@ -59,6 +59,3 @@ Then if you want can add more of that product. And then checkout to buy it.
     <li><a href="https://firebase.google.com">Firebase</a></li>
 </ul>
  
-## Demo
-
-[![Demo CountPages alpha](https://lh3.googleusercontent.com/ILubucj3BsDfFr-tqqkWKfKMxGqOcbI-PL302jGdQFXCqcEkuCpvfLxGWkjbt5DGCkmLf5uGB_u_b_SjINOLD6H2rIYY-I5-1riplxk9jo1D1SmtJzSPFxHpJqYI55y7i3YMM67K=s0)](https://drive.google.com/file/d/1zJaET_-nsGJpI_5xJmHe84VzNzqKImR5/view?usp=sharing)
