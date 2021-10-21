@@ -25,3 +25,17 @@ Then if you want can add more of that product. And then checkout to buy it.
     <li>To fetch the url from reqres this project uses "okhttp3"</li>
     <li>To load ImagesViews from a link use Picasso</li>
 </ul>
+
+## Links
+
+<ul>
+    <li><a href="https://material.io/">Material Design</a></li>
+    <li><a href="https://developers.google.com/maps/documentation/javascript/reference/geocoder">Geocoder</a></li>
+    <li><a href="https://developer.android.com/">Android developer</a></li>
+    <li><a href="https://bedu.org/">Bedu</a></li>
+    <li><a href="https://firebase.google.com">Firebase</a></li>
+</ul>
+
+## Demo
+
+<video src="https://drive.google.com/file/d/1zJaET_-nsGJpI_5xJmHe84VzNzqKImR5/view?usp=sharing" controls>
