@@ -38,4 +38,6 @@ Then if you want can add more of that product. And then checkout to buy it.
 
 ## Demo
 
-<video src="https://drive.google.com/file/d/1zJaET_-nsGJpI_5xJmHe84VzNzqKImR5/view?usp=sharing" controls>
+ <video src="https://drive.google.com/file/d/1zJaET_-nsGJpI_5xJmHe84VzNzqKImR5/view?usp=sharing" controls>
+  Your browser does not support the video tag.
+</video> 
