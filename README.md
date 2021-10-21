@@ -16,8 +16,24 @@ The login is different, you must use an user from the next API <a href="https://
     <img src="https://i.postimg.cc/ncX3YZpz/kt.png" alt="I couldn't find the image :C">
 </p>
 
+List of email to get a successful login:
 
-The products that the app will show are from the same app. From this List you can click in any product to get the detail view.
+george.bluth@reqres.in
+janet.weaver@reqres.in
+emma.wong@reqres.in
+eve.holt@reqres.in
+charles.morris@reqres.in
+tracey.ramos@reqres.in
+michael.lawson@reqres.in
+lindsay.ferguson@reqres.in
+tobias.funke@reqres.in
+byron.fields@reqres.in
+george.edwards@reqres.in
+rachel.howell@reqres.in
+
+
+
+The products that the app will show are from the <a href=" https://fakestoreapi.com/products">FakeStoreApi</a>. From this List you can click in any product to get the detail view.
 From the detail view you can buy the products with the button "Agregar al carrito". That would trigger the next Fragment (The Cart).
 Then if you want can add more of that product. And then checkout to buy it.
 
