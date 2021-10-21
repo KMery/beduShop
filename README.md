@@ -3,6 +3,8 @@
 
 For the correct use of the code I suggest to use <a href="https://developer.android.com/studio">Android studio</a><br></br>
 
+<img src="https://tutorialandroid.net/wp-content/uploads/tumblr_lq9tysPJhA1ql2603o1_250.gif" alt="Can't load image :C">
+
 ## About the project
 The project let the user Login or register. The registration is just design, so right now you can enter any data and it would accept it.
 The login is different, you must use an user from the next API <a href="https://reqres.in/api/users/">Reqres.in</a>. The password would accept any character/s.
@@ -35,10 +37,4 @@ Then if you want can add more of that product. And then checkout to buy it.
     <li><a href="https://bedu.org/">Bedu</a></li>
     <li><a href="https://firebase.google.com">Firebase</a></li>
 </ul>
-
-## Demo
-
-<a 
-href="{https://drive.google.com/file/d/1zJaET_-nsGJpI_5xJmHe84VzNzqKImR5/view?usp=sharing}" 
-title="Demo video beduShop">
-</a> 
+ 
