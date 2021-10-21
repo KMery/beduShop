@@ -7,9 +7,7 @@ For the correct use of the code I suggest to use <a href="https://developer.andr
 The project let the user Login or register. The registration is just design, so right now you can enter any data and it would accept it.
 The login is different, you must use an user from the next API <a href="https://reqres.in/api/users/">Reqres.in</a>. The password would accept any character/s.
 
-    <br><br/>
-    <img src="https://i.postimg.cc/ncX3YZpz/kt.png" alt="I couldn't find the image :C">
-    <br><br/>
+<img src="https://i.postimg.cc/ncX3YZpz/kt.png" alt="I couldn't find the image :C">
 
 
 The products that the app will show are from the same app. From this List you can click in any product to get the detail view.
