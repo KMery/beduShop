@@ -63,5 +63,5 @@ Then if you want can add more of that product. And then checkout to buy it.
 ## Mini demo
 
 <p align="center">
-    <img src="https://drive.google.com/file/d/1q7NyIQ78FuXAIhimIfdEgZ9fFt7sgeMI/view?usp=sharing" alt="I couldn't find the image :C">
+    <img src="https://drive.google.com/file/d/1q7NyIQ78FuXAIhimIfdEgZ9fFt7sgeMI/view" alt="I couldn't find the image :C">
 </p>
