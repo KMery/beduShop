@@ -16,7 +16,7 @@ The login is different, you must use an user from the next API <a href="https://
     <img src="https://i.postimg.cc/ncX3YZpz/kt.png" alt="I couldn't find the image :C">
 </p>
 
-List of email to get a successful login:
+List of email to get a <strong>successful login</strong>:
 
 <ul>
     <li>george.bluth@reqres.in</li>
@@ -49,7 +49,7 @@ Then if you want can add more of that product. And then checkout to buy it.
     <li>To load ImagesViews from a link use Picasso</li>
 </ul>
 
-## Links
+## Useful links
 
 <ul>
     <li><a href="https://material.io/">Material Design</a></li>
